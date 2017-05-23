@@ -22,3 +22,6 @@ sudo sh del.sh
 ![老铁，下班打卡了！](https://github.com/xtx1130/iqiyi-card-recommend/blob/master/images/offwork.png)
 
 流弊不流弊，老铁，稳不稳，反正告诉你打卡你也记不住 哔了狗了啊
+
+### 文档和日志输出就在本目录下的AutoMakeLog.err和AutoMakeLog.log  
+但是tmd不知道为啥，里面没内容啊，我能怎么办，我也很悲伤啊。凑活用吧，反正就为了提醒自己打卡的

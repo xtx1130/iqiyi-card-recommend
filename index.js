@@ -2,10 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
-const crontabPath = '~/mycron';
+const plistPath = '/Library/LaunchDaemons';
 
 let hour = process.argv[2]||18;
 let min = process.argv[3]||0;
+let plistData = fs.readFileSync('./plist.tpl').toString();
 fs.exists('./openShark.sh',status=>{
 	if(status)
 		return true;
@@ -16,16 +17,18 @@ fs.exists('./openShark.sh',status=>{
 		})
 	}
 });
-fs.exists('./sharkcron',status=>{
-	if(status)
-		return true;
-	else{
-		fs.writeFile('./sharkcron',min+' '+hour+' * * 1-5 /bin/sh '+path.resolve("./")+'/openShark.sh',err=>{//> path.resolve("./")+'/test.log 2>&1'
-			if(err)
-				console.log(err)
-		})
-	}
-});
-
+let replacement = {
+	min:min,
+	hour:hour,
+	path:path.resolve("./")
+};
+for(let i in replacement){
+	let reg = new RegExp('\{\{'+i+'\}\}','ig');
+	plistData = plistData.replace(reg,replacement[i]);
+}
+fs.writeFile(plistPath+'/com\.sharkphone\.launchctl.plist',plistData,err=>{
+	if(err)
+		console.log(err)
+})
 
 

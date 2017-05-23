@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.sharkphone.launchctlcd</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/sh</string>
+        <string>{{path}}/openShark.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Minute</key>
+            <integer>{{min}}</integer>
+            <key>Hour</key>
+            <integer>{{hour}}</integer>
+            <key>Weekday</key>
+            <integer>1</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>{{min}}</integer>
+            <key>Hour</key>
+            <integer>{{hour}}</integer>
+            <key>Weekday</key>
+            <integer>2</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>{{min}}</integer>
+            <key>Hour</key>
+            <integer>{{hour}}</integer>
+            <key>Weekday</key>
+            <integer>3</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>{{min}}</integer>
+            <key>Hour</key>
+            <integer>{{hour}}</integer>
+            <key>Weekday</key>
+            <integer>4</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>{{min}}</integer>
+            <key>Hour</key>
+            <integer>{{hour}}</integer>
+            <key>Weekday</key>
+            <integer>5</integer>
+        </dict>
+    </array>
+    <key>KeepAlive</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>{{path}}/AutoMakeLog.log</string>
+    <key>StandardErrorPath</key>
+    <string>{{path}}/AutoMakeLog.err</string>
+</dict>
+</plist>
